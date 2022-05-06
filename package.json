@@ -1,0 +1,35 @@
+{
+  "name": "electron-loading",
+  "description": "Library to add a loading screen for Electron apps",
+  "version": "0.1.0",
+  "author": "Ryo Hirama",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryhrm-gz/electron-loading"
+  },
+  "keywords": [
+    "electron",
+    "loading"
+  ],
+  "module": "./dist/electron-loading.js",
+  "exports": {
+    ".": {
+      "import": "./dist/electron-loading.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist",
+    "/types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.8"
+  }
+}
