@@ -1,3 +1,6 @@
+[![npm](https://img.shields.io/npm/v/electron-loading)](https://www.npmjs.com/package/electron-loading)
+[![npm](https://img.shields.io/npm/dm/electron-loading)](https://www.npmjs.com/package/electron-loading)
+
 # Usage
 
 ## 1. Instsll
