@@ -1,3 +1,8 @@
+/**
+ * Loader designed by
+ * https://tobiasahlin.com/spinkit
+ **/
+
 import {
   ElectronLoaderType,
   ElectronLoaderColor,
