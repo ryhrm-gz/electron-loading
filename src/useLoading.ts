@@ -25,7 +25,7 @@ const domReady = (
   });
 };
 
-export const useLoading = (options = {} as Partial<ElectronLoader>) => {
+export const useLoading = (options = {} as ElectronLoader) => {
   const { loader, color, backgroundColor, size } = {
     ...defaultLoader,
     ...options,
