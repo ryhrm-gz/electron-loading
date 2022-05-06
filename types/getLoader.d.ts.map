@@ -1,1 +1,1 @@
-{"version":3,"file":"getLoader.d.ts","sourceRoot":"","sources":["../src/getLoader.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,kBAAkB,EAClB,mBAAmB,EACnB,kBAAkB,EACnB,MAAM,QAAQ,CAAC;AAEhB,eAAO,MAAM,SAAS;;;;;;;CAulBrB,CAAC"}
+{"version":3,"file":"getLoader.d.ts","sourceRoot":"","sources":["../src/getLoader.ts"],"names":[],"mappings":"AAAA;;;IAGI;AAEJ,OAAO,EACL,kBAAkB,EAClB,mBAAmB,EACnB,kBAAkB,EACnB,MAAM,QAAQ,CAAC;AAEhB,eAAO,MAAM,SAAS;;;;;;;CAulBrB,CAAC"}

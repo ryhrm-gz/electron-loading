@@ -3,11 +3,10 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    sourcemap: true,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      formats: ["es"],
-      fileName: () => "electron-loading.js",
+      formats: ["es", "cjs"],
+      fileName: (format) => `electron-loading.${format}.js`,
     },
   },
 });

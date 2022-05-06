@@ -12,13 +12,15 @@
     "electron",
     "loading"
   ],
-  "module": "./dist/electron-loading.js",
+  "main": "./dist/electron-loading.cjs.js",
+  "module": "./dist/electron-loading.es.js",
   "exports": {
     ".": {
-      "import": "./dist/electron-loading.js"
+      "import": "./dist/electron-loading.es.js",
+      "require": "./dist/electron-loading.cjs.js"
     }
   },
-  "types": "./dist/index.d.ts",
+  "types": "./types/index.d.ts",
   "files": [
     "/dist",
     "/types"
