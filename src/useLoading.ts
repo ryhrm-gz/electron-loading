@@ -1,7 +1,7 @@
 import { getLoader } from "./getLoader";
-import { ElectronLoader } from "./type";
+import { ElectronLoaderOptions } from "./type";
 
-const defaultLoader: ElectronLoader = {
+const defaultLoader: ElectronLoaderOptions = {
   loader: "plane",
   color: "#000",
   backgroundColor: "#fff",
@@ -25,7 +25,7 @@ const domReady = (
   });
 };
 
-export const useLoading = (options = {} as ElectronLoader) => {
+export const useLoading = (options = {} as ElectronLoaderOptions) => {
   const { loader, color, backgroundColor, size } = {
     ...defaultLoader,
     ...options,

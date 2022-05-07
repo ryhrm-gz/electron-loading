@@ -17,7 +17,7 @@ export type ElectronLoaderBackgroundColor = string;
 export type ElectronLoaderLabel = string;
 export type ElectronLoaderSize = number;
 
-export type ElectronLoader = {
+export type ElectronLoaderOptions = {
   loader?: ElectronLoaderType;
   color?: ElectronLoaderColor;
   backgroundColor?: ElectronLoaderBackgroundColor;
