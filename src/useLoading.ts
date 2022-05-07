@@ -5,7 +5,7 @@ const defaultLoader: ElectronLoaderOptions = {
   loader: "plane",
   color: "#000",
   backgroundColor: "#fff",
-  label: "",
+  // label: "",
   size: 40,
 };
 
