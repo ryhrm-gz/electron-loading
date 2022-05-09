@@ -4,19 +4,19 @@
  **/
 
 import {
-  ElectronLoaderType,
-  ElectronLoaderColor,
-  ElectronLoaderSize,
-} from "./type";
+  ElectronLoadingLoaderType,
+  ElectronLoadingLoaderColor,
+  ElectronLoadingLoaderSize,
+} from "./types";
 
 export const getLoader = ({
   loader,
   color,
   size,
 }: {
-  loader?: ElectronLoaderType;
-  color?: ElectronLoaderColor;
-  size?: ElectronLoaderSize;
+  loader?: ElectronLoadingLoaderType;
+  color?: ElectronLoadingLoaderColor;
+  size?: ElectronLoadingLoaderSize;
 }) => {
   let elements: string = "";
   let style: string = "";
