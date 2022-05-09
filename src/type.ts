@@ -1,4 +1,4 @@
-export type ElectronLoaderType =
+export type ElectronLoadingLoaderType =
   | "plane"
   | "chase"
   | "bounce"
@@ -12,15 +12,15 @@ export type ElectronLoaderType =
   | "fold"
   | "wander";
 
-export type ElectronLoaderColor = string;
-export type ElectronLoaderBackgroundColor = string;
+export type ElectronLoadingLoaderColor = string;
+export type ElectronLoadingBackgroundColor = string;
 // export type ElectronLoaderLabel = string;
-export type ElectronLoaderSize = number;
+export type ElectronLoadingLoaderSize = number;
 
-export type ElectronLoaderOptions = {
-  loader?: ElectronLoaderType;
-  color?: ElectronLoaderColor;
-  backgroundColor?: ElectronLoaderBackgroundColor;
+export type ElectronLoadingLoaderOptions = {
+  loader?: ElectronLoadingLoaderType;
+  color?: ElectronLoadingLoaderColor;
+  backgroundColor?: ElectronLoadingBackgroundColor;
   // label?: ElectronLoaderLabel;
-  size?: ElectronLoaderSize;
+  size?: ElectronLoadingLoaderSize;
 };
