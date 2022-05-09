@@ -82,6 +82,10 @@ useLoading({
   backgroundColor: "#fff",
   // px
   size: 40,
+  message: undefined,
+  messageColor: undefined,
+  // px
+  messageFontSize: 14,
   // ms
   duration: 0,
 });
