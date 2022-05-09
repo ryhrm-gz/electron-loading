@@ -1,12 +1,14 @@
-import { getLoader } from "./getLoader";
+import { createWrapper } from "./createWrapper";
+import { createLoader } from "./createLoader";
 import { ElectronLoadingLoaderOptions } from "./types";
+import { createMessage } from "./createMessage";
 
 const defaultLoader: ElectronLoadingLoaderOptions = {
   loader: "plane",
   color: "#000",
   backgroundColor: "#fff",
-  // label: "",
   size: 40,
+  messageFontSize: 14,
   duration: 0,
 };
 
@@ -27,48 +29,47 @@ const domReady = (
 };
 
 export const createLoading = (options = {} as ElectronLoadingLoaderOptions) => {
-  const { loader, color, backgroundColor, size, duration } = {
+  const {
+    loader,
+    color,
+    backgroundColor,
+    size,
+    duration,
+    message,
+    messageColor,
+    messageFontSize,
+  } = {
     ...defaultLoader,
     ...options,
   };
-  const wrapperClassName = "electron-loading-wrapper";
-  const wrapper = document.createElement("div");
-  wrapper.className = wrapperClassName;
-  const wrapperStyle = document.createElement("style");
-  const wrapperStyleContent = `
-  .${wrapperClassName} {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: ${backgroundColor};
-    z-index: 9;
-  }
-  `;
-  wrapperStyle.innerHTML = wrapperStyleContent;
-  wrapperStyle.id = "electron-loading-wrapper-style";
 
-  const { loaderElements, loaderStyle } = getLoader({ loader, color, size });
+  const { wrapperElement, wrapperStyle } = createWrapper({ backgroundColor });
+  const { loaderElements, loaderStyle } = createLoader({ loader, color, size });
+  const { messageElement, messageStyle } = createMessage({
+    message,
+    messageColor,
+    messageFontSize,
+    color,
+  });
 
-  wrapper.appendChild(loaderElements);
+  const styleElement = document.createElement("style");
+  const styleContent = wrapperStyle + loaderStyle + messageStyle;
+  styleElement.innerHTML = styleContent;
+
+  wrapperElement.appendChild(loaderElements);
+  messageElement && wrapperElement.appendChild(messageElement);
 
   return {
     startLoading: () => {
       domReady().then(() => {
-        document.head.appendChild(wrapperStyle);
-        document.head.appendChild(loaderStyle);
-        document.body.appendChild(wrapper);
+        document.head.appendChild(styleElement);
+        document.body.appendChild(wrapperElement);
       });
     },
     stopLoading: () => {
       setTimeout(() => {
-        document.head.removeChild(wrapperStyle);
-        document.head.removeChild(loaderStyle);
-        document.body.removeChild(wrapper);
+        document.head.removeChild(styleElement);
+        document.body.removeChild(wrapperElement);
       }, duration);
     },
   };

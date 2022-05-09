@@ -6,6 +6,8 @@ const { startLoading, stopLoading } = createLoading({
   color: "#fff",
   backgroundColor: "#000",
   duration: 3000,
+  message: "読み込み中...",
+  messageFontSize: 12,
 });
 
 startLoading();
