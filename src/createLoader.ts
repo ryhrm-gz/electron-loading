@@ -9,7 +9,7 @@ import {
   ElectronLoadingLoaderSize,
 } from "./types";
 
-export const getLoader = ({
+export const createLoader = ({
   loader,
   color,
   size,
@@ -601,11 +601,8 @@ export const getLoader = ({
   const tempDiv = document.createElement("div");
   tempDiv.innerHTML = elements;
 
-  const styleNode = document.createElement("style");
-  styleNode.innerHTML = style;
-
   return {
     loaderElements: tempDiv.firstElementChild ?? tempDiv,
-    loaderStyle: styleNode,
+    loaderStyle: style,
   };
 };

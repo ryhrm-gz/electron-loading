@@ -1,2 +1,2 @@
-export { useLoading } from "./useLoading";
+export { createLoading } from "./createLoading";
 export * from "./types";
