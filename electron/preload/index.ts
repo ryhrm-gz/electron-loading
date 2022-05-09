@@ -5,6 +5,7 @@ const { startLoading, stopLoading } = useLoading({
   loader: "chase",
   color: "#fff",
   backgroundColor: "#000",
+  duration: 3000,
 });
 
 startLoading();

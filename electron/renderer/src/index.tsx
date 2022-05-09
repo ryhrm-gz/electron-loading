@@ -15,4 +15,4 @@ root.render(
   </StrictMode>
 );
 
-// window.stopLoading();
+window.stopLoading();
