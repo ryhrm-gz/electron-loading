@@ -1,7 +1,7 @@
-import { useLoading } from "../../src/";
+import { createLoading } from "../../src/";
 import { contextBridge } from "electron";
 
-const { startLoading, stopLoading } = useLoading({
+const { startLoading, stopLoading } = createLoading({
   loader: "chase",
   color: "#fff",
   backgroundColor: "#000",
