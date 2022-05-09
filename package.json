@@ -1,7 +1,7 @@
 {
   "name": "electron-loading",
   "description": "Library to add a loading screen for Electron apps",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Ryo Hirama",
   "license": "MIT",
   "repository": {
