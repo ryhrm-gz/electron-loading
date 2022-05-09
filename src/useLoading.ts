@@ -7,6 +7,7 @@ const defaultLoader: ElectronLoadingLoaderOptions = {
   backgroundColor: "#fff",
   // label: "",
   size: 40,
+  duration: 0,
 };
 
 const domReady = (
@@ -26,7 +27,7 @@ const domReady = (
 };
 
 export const useLoading = (options = {} as ElectronLoadingLoaderOptions) => {
-  const { loader, color, backgroundColor, size } = {
+  const { loader, color, backgroundColor, size, duration } = {
     ...defaultLoader,
     ...options,
   };
@@ -56,17 +57,19 @@ export const useLoading = (options = {} as ElectronLoadingLoaderOptions) => {
   wrapper.appendChild(loaderElements);
 
   return {
-    startLoading: async () => {
-      await domReady();
-
-      document.head.appendChild(wrapperStyle);
-      document.head.appendChild(loaderStyle);
-      document.body.appendChild(wrapper);
+    startLoading: () => {
+      domReady().then(() => {
+        document.head.appendChild(wrapperStyle);
+        document.head.appendChild(loaderStyle);
+        document.body.appendChild(wrapper);
+      });
     },
     stopLoading: () => {
-      document.head.removeChild(wrapperStyle);
-      document.head.removeChild(loaderStyle);
-      document.body.removeChild(wrapper);
+      setTimeout(() => {
+        document.head.removeChild(wrapperStyle);
+        document.head.removeChild(loaderStyle);
+        document.body.removeChild(wrapper);
+      }, duration);
     },
   };
 };
