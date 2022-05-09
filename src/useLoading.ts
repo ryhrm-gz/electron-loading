@@ -1,5 +1,5 @@
 import { getLoader } from "./getLoader";
-import { ElectronLoadingLoaderOptions } from "./type";
+import { ElectronLoadingLoaderOptions } from "./types";
 
 const defaultLoader: ElectronLoadingLoaderOptions = {
   loader: "plane",
