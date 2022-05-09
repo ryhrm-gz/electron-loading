@@ -82,6 +82,8 @@ useLoading({
   backgroundColor: "#fff",
   // px
   size: 40,
+  // ms
+  duration: 0,
 });
 ```
 
