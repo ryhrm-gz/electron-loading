@@ -31,9 +31,9 @@ npm install electron-loading
 - **preload.js**
 
   ```javascript
-  import { useLoading } from "electron-loading";
+  import { createLoading } from "electron-loading";
 
-  const { startLoading, stopLoading } = useLoading();
+  const { startLoading, stopLoading } = createLoading();
   ```
 
 ## 3. Run `startLoading` and expose `stopLoading` to renderer process
@@ -44,7 +44,7 @@ npm install electron-loading
   import { useLoading } from "electron-loading";
   import { contextBridge } from "electron";
 
-  const { startLoading, stopLoading } = useLoading();
+  const { startLoading, stopLoading } = createLoading();
 
   startLoading();
 
@@ -76,7 +76,7 @@ npm install electron-loading
 - Default option
 
 ```javascript
-useLoading({
+createLoading({
   loader: "plane",
   color: "#000",
   backgroundColor: "#fff",
